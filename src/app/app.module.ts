@@ -13,6 +13,7 @@ import { AkterComponent } from './akter/akter.component';
 import { SonetComponent } from './sonet/sonet.component';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { AgGridModule } from 'ag-grid-angular';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     AgGridModule.withComponents([])
+
   ],
   providers: [],
   bootstrap: [AppComponent]
