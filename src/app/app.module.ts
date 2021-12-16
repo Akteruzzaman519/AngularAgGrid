@@ -14,6 +14,7 @@ import { SonetComponent } from './sonet/sonet.component';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomCellCompComponent } from './custom-cell-comp/custom-cell-comp.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     RituComponent,
     NaimComponent,
     AkterComponent,
-    SonetComponent
+    SonetComponent,
+    CustomCellCompComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([CustomCellCompComponent])
 
   ],
   providers: [],

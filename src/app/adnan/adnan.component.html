@@ -6,8 +6,8 @@
 
     </div>
     <div class="row">
-        <ag-grid-angular #agGrid style="width: 1000px; height: 700px;" id="myGrid" class="ag-theme-alpine" [rowData]="rowData | async" [columnDefs]="columnDefs" rowSelection="multiple" (gridReady)="onGridReady($event)" [frameworkComponents]="frameworkComponents"
-            [sideBar]="sideBar">
+        <ag-grid-angular #agGrid style="width: 1000px; height: 700px;" id="myGrid" class="ag-theme-alpine" [rowData]="rowData " [columnDefs]="columnDefs" rowSelection="multiple" (gridReady)="onGridReady($event)" [frameworkComponents]="frameworkComponents" [sideBar]="sideBar">
+
         </ag-grid-angular>
     </div>
 
