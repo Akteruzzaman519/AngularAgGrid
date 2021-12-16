@@ -1,9 +1,15 @@
-<ag-grid-angular 
-    style="width: 1000px; height: 400px;" 
-    class="ag-theme-alpine"
-    [rowData]="rowData | async" 
-    [columnDefs]="columnDefs"
-    rowSelection="multiple"
-    >
-    
-</ag-grid-angular>
+<div class="container">
+    <div class="row">
+        <div class="col text-right m-2">
+            <button class="btn btn-success" (click)="getSelectedRows()">add</button>
+        </div>
+
+    </div>
+    <div class="row">
+        <ag-grid-angular #agGrid style="width: 1000px; height: 700px;" id="myGrid" class="ag-theme-alpine" [rowData]="rowData | async" [columnDefs]="columnDefs" rowSelection="multiple" (gridReady)="onGridReady($event)" [frameworkComponents]="frameworkComponents"
+            [sideBar]="sideBar">
+        </ag-grid-angular>
+    </div>
+
+
+</div>
