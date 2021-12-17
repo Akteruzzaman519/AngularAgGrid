@@ -24,10 +24,30 @@ export class AdnanComponent implements OnInit {
   }
 
   columnDefs = [
-    { field: "make", sortable: true, editable: true, filter: true, checkboxSelection: true },
-    { field: "model", sortable: true, editable: true, filter: true },
-    { field: "price", sortable: true, editable: true, filter: true },
-    { field: "Date", sortable: true, editable: true, filter: true, cellRenderer: "customcell" } //new column with a custom cell. The cell will render a component
+    {
+      field: "make", sortable: true, editable: true, filter: true, checkboxSelection: true,
+      cellClassRules: { //x: maps value, ctx: maps context, node: maps node, data: maps data, colDef: maps colDef ,rowIndex: maps rowIndex
+
+        'rag-green': 'x === "Toyota"',
+        'rag-amber': 'x === "Porsche" ',
+        'rag-red': 'x === "Ford"',
+      }, // cell style using cellClassRules which applies css class on conditions.
+      minWidth: 300,
+    },
+    { field: "model", sortable: true, editable: true, filter: true, resizable: true, cellStyle: { color: '#ECF0F1', 'background-color': '#5D6D7E' }, minWidth: 300, }, // static cell style
+    { // cell style using cellstyle function
+      field: "price", sortable: true, editable: true,
+      filter: true, resizable: true,
+      cellStyle: params => { //value,coldef,data,node,rowIndex
+        if (params.value > 0 && params.value < 50000) {
+
+          return { color: '#5D6D7E', backgroundColor: '#58D68D' };
+        }
+        return null;
+      },
+      minWidth: 300,
+    },
+    { field: "Date", sortable: true, editable: true, filter: true, cellRenderer: "customcell", minWidth: 280, } //new column with a custom cell. The cell will render a component
   ];
 
 
@@ -56,12 +76,12 @@ export class AdnanComponent implements OnInit {
 
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
-    //this.rowData = this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json');
-    this.rowData = [
-      { make: 'Toyota', model: 'Celica', price: 35000 },
-      { make: 'Ford', model: 'Mondeo', price: 32000 },
-      { make: 'Porsche', model: 'Boxter', price: 72000 }
-    ];
+    this.rowData = this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json');
+    // this.rowData = [
+    //   { make: 'Toyota', model: 'Celica', price: 35000 },
+    //   { make: 'Ford', model: 'Mondeo', price: 32000 },
+    //   { make: 'Porsche', model: 'Boxter', price: 72000 }
+    // ];
     setTimeout(() => {
       let pinnedBottomData = this.generatePinnedBottomData();
       this.gridApi.setPinnedBottomRowData([pinnedBottomData]); // create the total row.

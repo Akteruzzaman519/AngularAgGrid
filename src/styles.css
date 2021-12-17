@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "ag-grid-community/dist/styles/ag-grid.css";
 @import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+.rag-red {
+    background-color: rgb(23, 241, 241);
+}
+
+.rag-green {
+    background-color: lightgreen;
+}
+
+.rag-amber {
+    background-color: lightsalmon;
+}

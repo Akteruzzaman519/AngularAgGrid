@@ -1,14 +1,21 @@
 <div class="container">
     <div class="row">
-        <div class="col text-right m-2">
+        <div class="col-8 text-right m-2">
+            <span class=""> <h6>Multi Select, filter,Pagination,Sorting,Cell Editing
+                ,Footer row,CustomCell(Component),cellstyle </h6> 
+            </span>
             <button class="btn btn-success" (click)="getSelectedRows()">add</button>
         </div>
 
     </div>
     <div class="row">
-        <ag-grid-angular #agGrid style="width: 1000px; height: 700px;" id="myGrid" class="ag-theme-alpine" [rowData]="rowData " [columnDefs]="columnDefs" rowSelection="multiple" (gridReady)="onGridReady($event)" [frameworkComponents]="frameworkComponents" [sideBar]="sideBar">
+        <div class="col-8">
+            <ag-grid-angular #agGrid style="width: 1200px;height: 700px;" id="myGrid" class="ag-theme-alpine " [rowData]="rowData |async" [columnDefs]="columnDefs" rowSelection="multiple" (gridReady)="onGridReady($event)" [frameworkComponents]="frameworkComponents"
+                [sideBar]="sideBar" [pagination]="true" [paginationPageSize]="20">
 
-        </ag-grid-angular>
+            </ag-grid-angular>
+        </div>
+
     </div>
 
 
