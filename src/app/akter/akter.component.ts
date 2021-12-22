@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Module } from 'ag-grid-community';
+import { ColDef, Module } from 'ag-grid-community';
 
 @Component({
   selector: 'app-akter',
@@ -20,6 +20,18 @@ export class AkterComponent implements OnInit {
   public rowData;
   public modules;
 
+
+  columnDef: ColDef[] = [
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price'}
+];
+
+rowDat = [
+    { make: 'Toyota', model: 'Celica', price: 35000 },
+    { make: 'Ford', model: 'Mondeo', price: 32000 },
+    { make: 'Porsche', model: 'Boxter', price: 72000 }
+];
   constructor(private http: HttpClient) {
     this.columnDefs = [
       {
