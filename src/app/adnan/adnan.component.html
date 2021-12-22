@@ -1,9 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-8 text-right m-2">
+        <div class="col-12 text-right m-2">
+          <div class="row p-2">
             <span class=""> <h6>Multi Select, filter,Pagination,Sorting,Cell Editing
-                ,Footer row,CustomCell(Component),cellstyle </h6> 
+              ,Footer row,CustomCell(Component),cellstyle </h6> 
             </span>
+          </div>
+     
 
             <!-- <span>
                 Rows to Pin on Top:
@@ -37,17 +40,49 @@
                 <option value="4">4</option>
               </select> -->
               <!-- (change)="AddValueChanged($event)" -->
-            <select  [(ngModel)]="this.selectedSOption"  (change)="SelectionOptChanged($event)"> 
-                <option *ngFor="let option of selectionOption" [ngValue]="option.no" >{{option.no}} </option>
-            </select>
-            <button (click)="onPinnedRowTopCount()">Pin Top 3 Rows</button>
-            <button (click)="onPinnedRowBottomCount()" >Pin Bottom 3 Rows</button>
-            <button (click)="clearPinned()">Clear Pinned</button>
-            <button (click)="resetPinned()">
-              Left = #, Make; Right = Remarks
-            </button>
-            <button (click)="pinModel()">Left = Model</button>
-            <button class="btn btn-success" (click)="getSelectedRows()">add</button>
+              <div class="row p-2">
+                <div class=" col-2">
+                  <select  [(ngModel)]="this.selectedSOption"  (change)="SelectionOptChanged($event)"> 
+                    <option *ngFor="let option of selectionOption" [ngValue]="option.no" >{{option.no}} </option>
+                  </select>
+                </div>
+                <div class=" col-2">
+                  <span>
+                    Rows to Pin on Top:
+                  </span>
+                  <select  (change)="freezeTopRowChanged($event)"> 
+                    <option *ngFor="let option of rows" [ngValue]="option" >{{option}} </option>
+                  </select>
+                </div>
+                <div class=" col-2">
+                  <span>
+                    Rows to Pin on Bottom:
+                  </span>
+                  <select  (change)="freezeBottomRowChanged($event)"> 
+                    <option *ngFor="let option of rows" [ngValue]="option" >{{option}} </option>
+                  </select>
+                </div>
+
+                <!-- <button (click)="onPinnedRowTopCount()">Pin Top 3 Rows</button>
+                <button (click)="onPinnedRowBottomCount()" >Pin Bottom 3 Rows</button> -->
+                <div class=" col-1">
+                  <button (click)="clearPinned()">Clear Pinned</button>
+                </div>
+                <div class=" col-3">
+                  <button (click)="resetPinned()">
+                    Left = #, Make; Right = Remarks
+                  </button>
+                </div>
+                <div class=" col-1">
+                  <button (click)="pinModel()">Left = Model</button>
+                </div>
+                <div class=" col-1">
+
+                  <button class="btn btn-success" (click)="getSelectedRows()">add</button>
+                </div>
+
+              </div>
+            
         </div>
 
     </div>

@@ -25,6 +25,7 @@ export class AdnanComponent implements OnInit {
   public pinnedTopRowData;
   public pinnedBottomRowData;
   public selectionOption = [{ no: "Single Select" }, { no: "MultiSelect" }];
+  public rows = [0,1,2,3]
   public selectedSOption = "MultiSelect";
   public multiSelect = "multiple";
   constructor(private http: HttpClient) {
@@ -66,13 +67,20 @@ export class AdnanComponent implements OnInit {
     { field: "Date", sortable: true, editable: true, filter: true, cellRenderer: "customcell", minWidth: 280, }, //new column with a custom cell. The cell will render a component
 
     { headerName: "Rating", sortable: true, editable: true, filter: true, resizable: true,   
-      valueGetter :   function ratingValueGetter() {
+      valueGetter :   function ratingValueGetter(params) {
+        if(params.node.id ==="b-0" ){
+          return ""
+        }
         return Math.floor(Math.random() * 1000);
       },
       minWidth: 300 },
 
     { headerName: "Remarks", colId: 'Remarks', sortable: true, editable: true, filter: true, resizable: true,
-    valueGetter :   function remarksValueGetter() {
+    valueGetter : function remarksValueGetter(params) {
+
+      if(params.node.id ==="b-0" ){
+        return ""
+      }
       
       if(Math.floor(Math.random() * 1000) < 200 ){
         return "Very Poor";
@@ -174,6 +182,7 @@ export class AdnanComponent implements OnInit {
   }
   //#endregion
 
+
   //#region Frozen Column
   clearPinned() {
     this.gridColumnApi.applyColumnState({ defaultState: { pinned: null } });
@@ -216,7 +225,7 @@ export class AdnanComponent implements OnInit {
 
 
 
-  //#region 
+  //#region Freezing Rows..Top and Bottom
 
   onPinnedRowTopCount() {
     debugger
@@ -233,16 +242,31 @@ export class AdnanComponent implements OnInit {
     this.gridApi.setPinnedBottomRowData(rows);
   }
 
+  freezeTopRowChanged(event) {
+    debugger
+    var headerRowsToFloat = Number(event.target.value.split(':').pop().trim());
+    // var count = Number(headerRowsToFloat);
+    var rows = this.createData(headerRowsToFloat, 'Top');
+    this.gridApi.setPinnedTopRowData(rows);
+  }
+
+  freezeBottomRowChanged(event) {
+     var footerRowsToFloat = Number(event.target.value.split(':').pop().trim());
+    // var count = Number(footerRowsToFloat);
+    var rows = this.createData(footerRowsToFloat, 'Bottom');
+    this.gridApi.setPinnedBottomRowData(rows);
+  }
+
   createData(count, prefix) {
     var result = [];
     for (var i = 0; i < count; i++) {
       result.push({
-        athlete: prefix + " Athlete " + i,
-        age: prefix + " Age " + i,
-        country: prefix + " Country " + i,
-        year: prefix + " Year " + i,
-        date: prefix + " Date " + i,
-        sport: prefix + " Sport " + i
+        athlete: prefix + " make " + i,
+        age: prefix + " model " + i,
+        country: prefix + " price " + i,
+        year: prefix + " Date " + i,
+        date: prefix + " Rating " + i,
+        sport: prefix + " Remarks " + i
       });
     }
     return result;
