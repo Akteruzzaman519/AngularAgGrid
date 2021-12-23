@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomCellCompComponent } from './custom-cell-comp/custom-cell-comp.component';
+import { UIFeatureComponent } from './uifeature/uifeature.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CustomCellCompComponent } from './custom-cell-comp/custom-cell-comp.com
     NaimComponent,
     AkterComponent,
     SonetComponent,
-    CustomCellCompComponent
+    CustomCellCompComponent,
+    UIFeatureComponent
   ],
   imports: [
     BrowserModule,
