@@ -1,1 +1,66 @@
-<p>uifeature works!</p>
+<div class="card">
+    <div class="card-header text-center">
+        UI Feature
+    </div>
+</div>
+<div class="row no-gutters">
+    <div class="col-2 border" style="min-height: 80vh; max-height: 80vh;">
+        <button class="btn btn-info my-1 w-100">Accordion</button>
+        <button class="btn btn-info my-1 w-100">Calender</button>
+        <button class="btn btn-info my-1 w-100">CheckBox</button>
+        <button class="btn btn-info my-1 w-100">Combo</button>
+    </div>
+    <div class="col border">
+
+        <h2>Animated Accordion</h2>
+        <p>Click on the buttons to open the collapsible content.</p>
+
+        <button (click)=" Acc()" class="accordion w-100">Section 1</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+
+        <button class="accordion w-100">Section 2</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+
+        <button class="accordion w-100">Section 3</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+        <div class="card my-3">
+            <div class="card-header">
+                <p>Click on the x button in the top right corner to close the current tab:</p>
+            </div>
+            <div class="card-body">
+                <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                </div>
+
+                <div id="London" class="tabcontent">
+                    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                    <h3>London</h3>
+                    <p>London is the capital city of England.</p>
+                </div>
+
+                <div id="Paris" class="tabcontent">
+                    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                    <h3>Paris</h3>
+                    <p>Paris is the capital of France.</p>
+                </div>
+
+                <div id="Tokyo" class="tabcontent">
+                    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
