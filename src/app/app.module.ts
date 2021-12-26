@@ -21,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { StudentComponent } from './student/student.component';
 import { TreeComponent } from './tree/tree.component';
 import { AccordionComponent } from './accordion/accordion.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AccordionComponent } from './accordion/accordion.component';
     RegisterComponent,
     StudentComponent,
     TreeComponent,
-    AccordionComponent
+    AccordionComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,
