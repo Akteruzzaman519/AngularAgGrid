@@ -9,11 +9,17 @@ import { Config, Menu } from '../accordion/types';
 export class UIFeatureComponent implements OnInit {
 
   acc = document.getElementsByClassName("accordion");
-
+  public show = false;
   constructor() { }
 
   ngOnInit(): void {
     document.getElementById("defaultOpen").click();
+  }
+  public showModal() {
+    this.show = true;
+  }
+  public closeModal() {
+    this.show = false;
   }
   public accordion(acc: any, i) {
     for (i = 0; i < acc.length; i++) {
