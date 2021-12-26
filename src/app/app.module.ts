@@ -16,6 +16,9 @@ import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomCellCompComponent } from './custom-cell-comp/custom-cell-comp.component';
 import { UIFeatureComponent } from './uifeature/uifeature.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { StudentComponent } from './student/student.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { UIFeatureComponent } from './uifeature/uifeature.component';
     AkterComponent,
     SonetComponent,
     CustomCellCompComponent,
-    UIFeatureComponent
+    UIFeatureComponent,
+    LoginComponent,
+    RegisterComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
