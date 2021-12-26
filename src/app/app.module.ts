@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { StudentComponent } from './student/student.component';
 import { TreeComponent } from './tree/tree.component';
+import { AccordionComponent } from './accordion/accordion.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { TreeComponent } from './tree/tree.component';
     LoginComponent,
     RegisterComponent,
     StudentComponent,
-    TreeComponent
+    TreeComponent,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,
