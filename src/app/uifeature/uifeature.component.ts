@@ -88,5 +88,4 @@ export class UIFeatureComponent implements OnInit {
       ]
     }
   ];
-
 }
