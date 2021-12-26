@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { RituComponent } from './ritu/ritu.component';
 import { SonetComponent } from './sonet/sonet.component';
 import { StudentComponent } from './student/student.component';
+import { TreeComponent } from './tree/tree.component';
 import { UIFeatureComponent } from './uifeature/uifeature.component';
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'uiFeature', component: UIFeatureComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'studentEntry', component: StudentComponent }
+  { path: 'studentEntry', component: StudentComponent },
+  { path: 'tree', component: TreeComponent },
 ];
 
 @NgModule({

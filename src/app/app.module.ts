@@ -19,6 +19,7 @@ import { UIFeatureComponent } from './uifeature/uifeature.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { StudentComponent } from './student/student.component';
+import { TreeComponent } from './tree/tree.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { StudentComponent } from './student/student.component';
     UIFeatureComponent,
     LoginComponent,
     RegisterComponent,
-    StudentComponent
+    StudentComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,
