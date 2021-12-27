@@ -25,6 +25,8 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { TabComponent } from './tab/tab.component';
 import { FromCommonComponent } from './from-common/from-common.component';
 import { AccComponent } from './acc/acc.component';
+import { MenuTreeComponent } from './menu-tree/menu-tree.component';
+import { ComboComponent } from './combo/combo.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { AccComponent } from './acc/acc.component';
     FormValidationComponent,
     TabComponent,
     FromCommonComponent,
-    AccComponent
+    AccComponent,
+    MenuTreeComponent,
+    ComboComponent
   ],
   imports: [
     BrowserModule,

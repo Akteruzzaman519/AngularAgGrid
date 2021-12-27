@@ -1,0 +1,143 @@
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    opacity: 1.0;
+    height: 29px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.inputBox {
+    float: center;
+    border: 1px solid #DDB40A;
+    background-color: #DDB40A;
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.reload-btn {
+    opacity: 0.7;
+    float: right;
+    clear: both;
+    background-size: 20px auto;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #DDB40A;
+}
+
+.id-caption {
+    float: left;
+    width: 36px;
+    padding: 4px;
+}
+
+.caption {
+    padding: 0px;
+    align-self: center;
+    width: 100%;
+}
+
+.count {
+    float: right;
+    padding: 0px;
+    align-self: center;
+    top: -16px;
+    font-size: 13px;
+}
+
+.autocomplete-items {
+    opacity: 1;
+    border: 1px solid silver;
+    border-bottom: none;
+    border-top: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow: auto;
+    position: relative;
+    z-index: 98;
+    display: block;
+}
+
+.autocomplete-items div {
+    padding: 6px;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-bottom: 1px solid #DDB40A;
+}
+
+.autocomplete-items div:hover {
+    background-color: antiquewhite;
+}
+
+.autocomplete-active {
+    background-color: #DDB40A !important;
+    color: #ffffff;
+}
+
+.lang-toggler-zindex {
+    z-index: 10000;
+}
+
+.autocomplete-items1 {
+    padding: 2px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: 1px solid silver;
+    border-top: 0;
+    margin: 2px;
+    float: left;
+    position: absolute;
+    z-index: 2000;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.autocomplete-items1 div {
+    cursor: pointer;
+    background-color: aliceblue;
+    border: 1px solid #DDB40A;
+    background-color: whitesmoke;
+    float: left;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 1px 8px;
+}
+
+.autocomplete-items1 div:hover {
+    background-color: antiquewhite;
+}
+
+.valueCout {
+    z-index: 999;
+    position: absolute;
+    right: 47px;
+    color: black;
+    font-weight: 700;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap!important;
+    align-items: stretch;
+    width: 100%;
+}
+
+.row>.col-12>div.autocomplete div.autocomplete-items {
+    z-index: 1000!important;
+}
+
+.row>.col-12>div.autocomplete div.autocomplete-items1 {
+    z-index: 1000!important;
+}
+
+.ics-combo-close {
+    float: right!important;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+    border: 0!important;
+}

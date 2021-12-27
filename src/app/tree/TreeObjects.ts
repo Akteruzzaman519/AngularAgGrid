@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
 
+export enum ETreeOperation {
+  NONE = 0,
+  REFRESH_ITEM = 1,  // set selectedIDs from db....
+  RELOAD_TREE = 2,
+  PROPAGATE_NODE = 3,
+  REFRESH_SELECTED_ITEMS = 4
+
+}
 export interface ITreeNode {
   NodeID: number;
   ParentID: number;
@@ -282,5 +290,17 @@ export class ICSTree {
 
   public setMultipleSelection(status: boolean): void {
     this.MultipleSelection = status;
+  }
+
+  public convertToNumArray(strValue: string): number[] { // get string of numbers and convert it into array of numbers
+    const numArray: number[] = [];
+    if (strValue === '' || strValue.length <= 0) {
+      return numArray;
+    }
+    const separatedValue = strValue.split(',');
+    separatedValue.forEach(value => {
+      numArray.push(parseInt(value, 10));
+    });
+    return numArray;
   }
 }

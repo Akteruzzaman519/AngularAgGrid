@@ -1,0 +1,4 @@
+<!-- <app-tree [TreeOptions]='this.iTreeOptions' [refreshDB]='this.reload' (selectionChanged)="menuSelected($event)" (reloadMenuTree)="this.reloadTree($event)"></app-tree> -->
+
+
+<app-tree class="mt-1" #container [TreeOptions]='this.iTreeOptions' [refreshDB]='this.reload' [reloadSelectedNodeIDs]='this.reload2' (removeElement)="removeSelected($event)" (selectionsChanged)="menusSelected($event)"></app-tree>

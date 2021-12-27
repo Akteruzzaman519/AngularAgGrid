@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, HostListener, EventEmitter, Renderer2, ViewChild, ViewContainerRef, OnChanges, AfterViewInit } from '@angular/core';
-import { ICSTree, ITreeNode } from './TreeObjects';
+import { ETreeOperation, ICSTree, ITreeNode } from './TreeObjects';
 
 @Component({
   selector: 'app-tree',
@@ -7,8 +7,6 @@ import { ICSTree, ITreeNode } from './TreeObjects';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements OnInit {
-
-
   private root: ITreeNode = { NodeID: 0, ParentID: 0, Text: '-Data not found-', checked: false, haveChild: false };
   private newNode: ITreeNode = { NodeID: 0, ParentID: 0, Text: '', TagValue: '' };
   private nodeIDPart = 'ni-';
@@ -46,6 +44,7 @@ export class TreeComponent implements OnInit {
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    // this.routes = JSON.parse(this.cs.ssGet('ROUTES', SessionTag.ROUTES));
   }
 
   ngAfterViewInit(): void {
@@ -65,14 +64,31 @@ export class TreeComponent implements OnInit {
     }
   }
   ngOnChanges(): void {
-
+    if (this.TreeOptions === undefined || this.TreeOptions === null) { return; }
+    if (this.refreshDB === ETreeOperation.PROPAGATE_NODE) {
+      this.hookTree();
+    }
+    if (this.refreshDB === ETreeOperation.RELOAD_TREE) {
+      // for reload case clear tree then this.hooktree()
+      const childElements = this.eContainer?.element.nativeElement.children;
+      for (let child of childElements) {
+        this.renderer.removeChild(this.eContainer.element.nativeElement, child);
+      }
+      this.hookTree();
+    }
+    if (this.refreshItem === ETreeOperation.REFRESH_ITEM) { //  jam
+      this.newNode = this.TreeOptions.addedItem;
+      this.addNodeToTree();
+    }
   }
 
   private hookTree(): void {
 
     this.root = this.TreeOptions.TreeData.getRoot();
     this.maxID = this.TreeOptions.TreeData.getMaxNodeID();
-
+    if (!(this.refreshDB == ETreeOperation.PROPAGATE_NODE || this.refreshDB == ETreeOperation.RELOAD_TREE)) {
+      return;
+    }
     if (!this.eContainer) {
       return;
     }
@@ -218,6 +234,10 @@ export class TreeComponent implements OnInit {
     const tagvalue = document.getElementById('txtTagValue') as HTMLInputElement;
     this.newNode.Text = name.value;
     this.newNode.TagValue = tagvalue.value;
+
+    // if (this.newNode.Text === '' || this.newNode.Text === null || this.newNode.Text === undefined) {
+    //   return;
+    // }
     this.newNode.haveChild = false;
     const cNode: ITreeNode = this.getCurrNodeFromList(parentLi);
     return cNode;
@@ -253,6 +273,9 @@ export class TreeComponent implements OnInit {
     const txtTag = document.getElementById('txtTagValue');
     const newName = (txtMenuName as HTMLInputElement).value;
     const newTag = (txtTag as HTMLInputElement).value;
+    if (newName === '' || newName === null || newName === undefined) {
+      return;
+    }
     //const editDIV = event.target.parentNode.p;
     const nLi = this.editDIV.nextElementSibling;
     const nUL = this.editDIV.parentNode;
@@ -346,6 +369,7 @@ export class TreeComponent implements OnInit {
     }
     if (event.target.id === 'imgAdd') {
       this.renderEditPanel(event);
+      return;
     }
     if (event.target.id === 'btnChild') {
       this.addChild(event, true);
