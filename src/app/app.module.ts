@@ -22,6 +22,9 @@ import { StudentComponent } from './student/student.component';
 import { TreeComponent } from './tree/tree.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
+import { TabComponent } from './tab/tab.component';
+import { FromCommonComponent } from './from-common/from-common.component';
+import { AccComponent } from './acc/acc.component';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
     StudentComponent,
     TreeComponent,
     AccordionComponent,
-    FormValidationComponent
+    FormValidationComponent,
+    TabComponent,
+    FromCommonComponent,
+    AccComponent
   ],
   imports: [
     BrowserModule,

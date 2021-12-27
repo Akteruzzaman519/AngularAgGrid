@@ -10,11 +10,14 @@ export class UIFeatureComponent implements OnInit {
 
   acc = document.getElementsByClassName("accordion");
   public show = false;
+
   constructor() { }
 
   ngOnInit(): void {
-    document.getElementById("defaultOpen").click();
+
   }
+
+
   public showModal() {
     this.show = true;
   }
@@ -40,7 +43,7 @@ export class UIFeatureComponent implements OnInit {
   }
 
 
-  public openCity(evt, cityName) {
+  public openCityqq(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -88,4 +91,9 @@ export class UIFeatureComponent implements OnInit {
       ]
     }
   ];
+
+
+
+
+
 }
