@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+        Employee Operation
+    </div>
+    <div class="card-body p-0" style="min-height: 80vh; max-height: 80vh;">
+        <div class="card">
+            <div class="card-header p-2">
+                <button class="btn btn-success mx-1">Adv Search</button>
+                <button class="btn btn-success mx-1" routerLink="/employee">Add</button>
+                <button class="btn btn-success mx-1">Edit</button>
+                <button class="btn btn-success mx-1">Delete</button>
+                <button class="btn btn-success mx-1">Approve</button>
+                <button class="btn btn-success mx-1">Preview</button>
+            </div>
+        </div>
+        <ag-grid-angular style="width: 100%; height:75vh;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs"> </ag-grid-angular>
+    </div>
+</div>

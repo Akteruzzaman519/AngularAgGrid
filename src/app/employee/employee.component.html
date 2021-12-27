@@ -1,0 +1,93 @@
+<div class="card my-2">
+    <div class="card-header">
+        Product Entry
+    </div>
+    <div class="card-body">
+        <div class="form">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3"> <label>Receive No</label> <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3"> <label>Challan No</label> <input type="text" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Start Date</label> <input type="date" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>End Date</label> <input type="date" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3"> <label>Track No</label> <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3"> <label>Driver Name</label> <input type="tel" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3"> <label>Delivary Point</label> <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3"> <label>Remark</label> <input type="tel" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Subject</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="1">Maths</option>
+              <option value="2">Science</option>
+              <option value="3">Social</option>
+            </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Photo Upload</label>
+                    <input type="file" class="form-control" required>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        Product Details
+    </div>
+    <div class="card-body p-2">
+        <button class="btn btn-success mx-1" id="addDetail">Add</button>
+        <button class="btn btn-success mx-1" id="editDetail">Edit</button>
+        <button class="btn btn-success mx-1" id="deleteDetail">Delete</button>
+    </div>
+    <div class="card-body p-0">
+        <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs">
+        </ag-grid-angular>
+    </div>
+</div>
+
+<div *ngIf="this.hideshow===true" style="z-index:52525;" class="ics-progress bg-transparent">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable " role="document ">
+        <div class="modal-content">
+            <div class="modal-body p-0 ">
+                <div class="card ">
+                    <div class="card-header p-2">
+                        Product Details
+                        <button class="btn btn-danger mr-2 float-right" id="detailClose">X</button>
+                    </div>
+                    <div class="card-body p-2 ">
+
+                    </div>
+                    <div class="card-footer p-2">
+
+                        <button class="btn btn-secondary mr-2 float-right" id="saveDetail">Add</button>
+                        <button class="btn btn-secondary mr-2 float-right" id="detailClose">close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

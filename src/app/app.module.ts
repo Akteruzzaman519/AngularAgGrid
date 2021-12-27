@@ -28,6 +28,8 @@ import { AccComponent } from './acc/acc.component';
 import { MenuTreeComponent } from './menu-tree/menu-tree.component';
 import { ComboComponent } from './combo/combo.component';
 import { ModalWindowComponent } from './modal-window/modal-window.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { ModalWindowComponent } from './modal-window/modal-window.component';
     AccComponent,
     MenuTreeComponent,
     ComboComponent,
-    ModalWindowComponent
+    ModalWindowComponent,
+    EmployeesComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,

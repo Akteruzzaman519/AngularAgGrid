@@ -5,6 +5,8 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { AdnanComponent } from './adnan/adnan.component';
 import { AkterComponent } from './akter/akter.component';
 import { ComboComponent } from './combo/combo.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeesComponent } from './employees/employees.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { FromCommonComponent } from './from-common/from-common.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'naim', component: NaimComponent },
   { path: 'akter', component: AkterComponent },
   { path: 'sonet', component: SonetComponent },
+  { path: 'employees', component: EmployeesComponent },
+  { path: 'employee', component: EmployeeComponent },
   {
     path: 'uiFeature', component: UIFeatureComponent,
     children: [
