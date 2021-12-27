@@ -113,7 +113,7 @@ export class TreeComponent implements OnInit {
     this.renderer.addClass(editDIVh, 'card-header');
     this.renderer.addClass(editDIVh, 'rounded-0');
     this.renderer.addClass(editDIVh, 'p-2');
-    this.renderer.addClass(editDIVh, 'ics-bg-warning');
+    this.renderer.addClass(editDIVh, 'bg-warning');
 
     const editDIVb = this.renderer.createElement('div');
     this.renderer.appendChild(this.editDIV, editDIVb);
@@ -124,14 +124,14 @@ export class TreeComponent implements OnInit {
     const editDIVf = this.renderer.createElement('div');
     this.renderer.appendChild(this.editDIV, editDIVf);
     this.renderer.addClass(editDIVf, 'card-footer');
-    this.renderer.addClass(editDIVf, 'ics-bg-secondary');
+    this.renderer.addClass(editDIVf, 'bg-secondary');
     this.renderer.addClass(editDIVf, 'rounded-0');
     this.renderer.addClass(editDIVf, 'p-2');
 
     const rowDiv1 = this.renderer.createElement('div');
     this.renderer.addClass(rowDiv1, 'row');
     this.renderer.addClass(rowDiv1, 'no-gutters');
-    this.renderer.addClass(rowDiv1, 'ics-form-group');
+    this.renderer.addClass(rowDiv1, 'form-group');
 
     const span1 = this.renderer.createElement('span');
     span1.innerHTML += 'Display Text';
@@ -147,7 +147,7 @@ export class TreeComponent implements OnInit {
     const rowDiv = this.renderer.createElement('div');
     this.renderer.addClass(rowDiv, 'row');
     this.renderer.addClass(rowDiv, 'no-gutters');
-    this.renderer.addClass(rowDiv, 'ics-form-group');
+    this.renderer.addClass(rowDiv, 'form-group');
 
     const br2 = this.renderer.createElement('br');
 
@@ -156,7 +156,7 @@ export class TreeComponent implements OnInit {
     this.renderer.setProperty(input, 'id', 'txtMenuName');
     this.renderer.setProperty(input, 'placeholder', 'Menu-Name');
     this.renderer.setAttribute(input, 'autocomplete', 'off');
-    this.renderer.addClass(input, 'ics-form-control');
+    this.renderer.addClass(input, 'form-control');
     this.renderer.addClass(input, 'form-control');
     this.renderer.addClass(input, 'col-md-6');
     this.renderer.addClass(input, 'col-sm-12');
@@ -166,7 +166,7 @@ export class TreeComponent implements OnInit {
     this.renderer.setProperty(input2, 'id', 'txtTagValue');
     this.renderer.setProperty(input2, 'placeholder', 'TagValue');
     this.renderer.setAttribute(input2, 'autocomplete', 'off');
-    this.renderer.addClass(input2, 'ics-form-control');
+    this.renderer.addClass(input2, 'form-control');
     this.renderer.addClass(input2, 'form-control');
     this.renderer.addClass(input2, 'col-md-6');
     this.renderer.addClass(input2, 'col-sm-12');
@@ -176,37 +176,37 @@ export class TreeComponent implements OnInit {
     const childBtn = this.renderer.createElement('button');
     this.renderer.setProperty(childBtn, 'id', 'btnChild');
     childBtn.innerHTML += 'Add as child';
-    this.renderer.addClass(childBtn, 'ics-btn');
-    this.renderer.addClass(childBtn, 'ics-btn-add');
-    this.renderer.addClass(childBtn, 'ics-btn-secondary');
+    this.renderer.addClass(childBtn, 'btn');
+    this.renderer.addClass(childBtn, 'btn-add');
+    this.renderer.addClass(childBtn, 'btn-secondary');
 
 
     const siblingBtn = this.renderer.createElement('button');
     this.renderer.setProperty(siblingBtn, 'id', 'btnSibling');
     siblingBtn.innerHTML += 'Add as sibling';
-    this.renderer.addClass(siblingBtn, 'ics-btn');
-    this.renderer.addClass(siblingBtn, 'ics-btn-secondary');
+    this.renderer.addClass(siblingBtn, 'btn');
+    this.renderer.addClass(siblingBtn, 'btn-secondary');
 
     const updateBtn = this.renderer.createElement('button');
     this.renderer.setProperty(updateBtn, 'id', 'btnUpdate');
     updateBtn.innerHTML += 'Update';
-    this.renderer.addClass(updateBtn, 'ics-btn');
-    this.renderer.addClass(updateBtn, 'ics-btn-secondary');
+    this.renderer.addClass(updateBtn, 'btn');
+    this.renderer.addClass(updateBtn, 'btn-secondary');
 
     const deleteBtn = this.renderer.createElement('button');
     this.renderer.setProperty(deleteBtn, 'id', 'btnDelete');
     deleteBtn.innerHTML += 'Delete';
-    this.renderer.addClass(deleteBtn, 'ics-btn-del');
-    this.renderer.addClass(deleteBtn, 'ics-btn');
-    this.renderer.addClass(deleteBtn, 'ics-btn-secondary');
+    this.renderer.addClass(deleteBtn, 'btn-del');
+    this.renderer.addClass(deleteBtn, 'btn');
+    this.renderer.addClass(deleteBtn, 'btn-secondary');
 
     const closeBtn = this.renderer.createElement('button');
     this.renderer.setProperty(closeBtn, 'id', 'btnClose');
     closeBtn.innerHTML += 'Close';
 
-    this.renderer.addClass(closeBtn, 'ics-btn-cross');
-    this.renderer.addClass(closeBtn, 'ics-btn');
-    this.renderer.addClass(closeBtn, 'ics-btn-secondary');
+    this.renderer.addClass(closeBtn, 'btn-cross');
+    this.renderer.addClass(closeBtn, 'btn');
+    this.renderer.addClass(closeBtn, 'btn-secondary');
 
     this.renderer.appendChild(rowDiv, span1);
     this.renderer.appendChild(rowDiv, input);

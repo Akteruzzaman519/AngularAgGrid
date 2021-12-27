@@ -1,0 +1,25 @@
+<button class="btn btn-success" (click)="modalOpen()">modal Open</button>
+
+<div *ngIf="this.hideshow===true" style="z-index:52525;" class="ics-progress bg-transparent">
+    <div class="modal-dialog modal-md modal-dialog-scrollable " role="document ">
+        <div class="modal-content ">
+            <div class="modal-body p-0 ">
+                <div class="card ">
+                    <div class="card-header p-2">
+                        This is header
+                        <button class="btn btn-danger mr-2 float-right" (click)=modalClose()>X</button>
+                    </div>
+                    <div class="card-body p-2 ">
+                        <div class="" style="height: 400px;"></div>
+                    </div>
+                    <div class="card-footer p-2">
+
+                        <button class="btn btn-secondary mr-2 float-right" (click)=modalClose()>close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="" style="min-height: 100vh;"></div>
+<button class="btn btn-success" (click)="modalOpen()">modal Open</button>

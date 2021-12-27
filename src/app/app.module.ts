@@ -27,6 +27,7 @@ import { FromCommonComponent } from './from-common/from-common.component';
 import { AccComponent } from './acc/acc.component';
 import { MenuTreeComponent } from './menu-tree/menu-tree.component';
 import { ComboComponent } from './combo/combo.component';
+import { ModalWindowComponent } from './modal-window/modal-window.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ComboComponent } from './combo/combo.component';
     FromCommonComponent,
     AccComponent,
     MenuTreeComponent,
-    ComboComponent
+    ComboComponent,
+    ModalWindowComponent
   ],
   imports: [
     BrowserModule,
