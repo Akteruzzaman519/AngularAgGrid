@@ -5,50 +5,35 @@
     <div class="card-body">
         <div class="form">
             <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3"> <label>Receive No</label> <input type="text" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>Receive No</label></div>
+                <div class="col-md-4 mt-md-0 my-y">  <input type="text" class="form-control" required>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-3"> <label>Challan No</label> <input type="text" class="form-control" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Start Date</label> <input type="date" class="form-control" required>
-                </div>
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>End Date</label> <input type="date" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>Challan No</label></div>
+                <div class="col-md-4 mt-md-0 my-2"> <input type="text" class="form-control" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3"> <label>Track No</label> <input type="email" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>Start Date</label></div>
+                <div class="col-md-4 mt-md-0 my-y">  <input type="date" class="form-control" required>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-3"> <label>Driver Name</label> <input type="tel" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>End Date</label></div>
+                <div class="col-md-4 mt-md-0 my-2"> <input type="date" class="form-control" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3"> <label>Delivary Point</label> <input type="email" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>Track No</label></div>
+                <div class="col-md-4 mt-md-0 my-y">  <input type="text" class="form-control" required>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-3"> <label>Remark</label> <input type="tel" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>Driver Name</label></div>
+                <div class="col-md-4 mt-md-0 my-2"> <input type="text" class="form-control" required>
                 </div>
             </div>
-
             <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Subject</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                        </div>
-                        <select class="custom-select" id="inputGroupSelect01">
-              <option selected>Choose...</option>
-              <option value="1">Maths</option>
-              <option value="2">Science</option>
-              <option value="3">Social</option>
-            </select>
-                    </div>
+                <div class="col-md-2 mt-md-0 my-2"><label>Delivary Point</label></div>
+                <div class="col-md-4 mt-md-0 my-y">  <input type="text" class="form-control" required>
                 </div>
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <label>Photo Upload</label>
-                    <input type="file" class="form-control" required>
+                <div class="col-md-2 mt-md-0 my-2"><label>Remark</label></div>
+                <div class="col-md-4 mt-md-0 my-2"> <input type="text" class="form-control" required>
                 </div>
             </div>
         </div>
@@ -67,9 +52,13 @@
         <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs">
         </ag-grid-angular>
     </div>
+    <div class="card-footer">
+        <button class="btn btn-secondary mr-2 float-right" id="employeeClose">close</button>
+        <button class="btn btn-secondary mr-2 float-right" id="saveEmployee">Save</button>
+    </div>
 </div>
 
-<div *ngIf="this.hideshow===true" style="z-index:52525;" class="ics-progress bg-transparent">
+<div *ngIf="this.hideshow===true" style="z-index:52525;" class="ics-progress">
     <div class="modal-dialog modal-xl modal-dialog-scrollable " role="document ">
         <div class="modal-content">
             <div class="modal-body p-0 ">
@@ -81,20 +70,35 @@
                     <div class="card-body p-2 ">
                         <div class="form">
                             <div class="row">
-                                <div class="col-md-2  mt-md-0 mt-3"><label>Product Name</label></div>
-                                <div class="col-md-4 mt-md-0 mt-3"> <input type="text" class="form-control" required>
+                                <div class="col-md-2 mt-md-0 my-2"><label>Receive No</label></div>
+                                <div class="col-md-4 mt-md-0 my-y">  <input type="text" class="form-control" required>
                                 </div>
-                                <div class="col-md-2  mt-md-0 mt-3"><label>Product Type</label></div>
-                                <div class="col-md-4 mt-md-0 mt-3"> <input type="text" class="form-control" required>
+                                <div class="col-md-2 mt-md-0 my-2"><label>Challan No</label></div>
+                                <div class="col-md-4 mt-md-0 my-2"> <input type="text" class="form-control" required>
                                 </div>
                             </div>
-
                             <div class="row">
-                                <div class="col-md-2  mt-md-0 mt-3"><label>Start Date</label></div>
-                                <div class="col-md-4 mt-md-0 mt-3"> <input type="date" class="form-control" required>
+                                <div class="col-md-2 mt-md-0 my-2"><label>Start Date</label></div>
+                                <div class="col-md-4 mt-md-0 my-y">  <input type="date" class="form-control" required>
                                 </div>
-                                <div class="col-md-2  mt-md-0 mt-3"><label>End Date</label></div>
-                                <div class="col-md-4 mt-md-0 mt-3"> <input type="date" class="form-control" required>
+                                <div class="col-md-2 mt-md-0 my-2"><label>End Date</label></div>
+                                <div class="col-md-4 mt-md-0 my-2"> <input type="date" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mt-md-0 my-2"><label>Track No</label></div>
+                                <div class="col-md-4 mt-md-0 my-y">  <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-2 mt-md-0 my-2"><label>Driver Name</label></div>
+                                <div class="col-md-4 mt-md-0 my-2"> <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 mt-md-0 my-2"><label>Delivary Point</label></div>
+                                <div class="col-md-4 mt-md-0 my-y">  <input type="text" class="form-control" required>
+                                </div>
+                                <div class="col-md-2 mt-md-0 my-2"><label>Remark</label></div>
+                                <div class="col-md-4 mt-md-0 my-2"> <input type="text" class="form-control" required>
                                 </div>
                             </div>
                         </div>

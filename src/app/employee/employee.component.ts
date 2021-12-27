@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ColDef } from 'ag-grid-community';
 
 @Component({
@@ -9,7 +10,7 @@ import { ColDef } from 'ag-grid-community';
 export class EmployeeComponent implements OnInit {
 
   public hideshow = false;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -45,5 +46,17 @@ export class EmployeeComponent implements OnInit {
     if (itemID === "detailClose") {
       this.hideshow = false;
     }
+    if (itemID === "saveEmployee") {
+      this.router.navigate(['employees']);
+    }
+    if (itemID === "employeeClose") {
+      this.router.navigate(['employees']);
+    }
+
+
+
+    
+
+   
   }
 }
