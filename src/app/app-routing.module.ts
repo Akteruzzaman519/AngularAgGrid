@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'sonet', component: SonetComponent },
   { path: 'employees', component: EmployeesComponent },
   { path: 'employee', component: EmployeeComponent },
+  { path: 'menu', component: MenuTreeComponent },
   {
     path: 'uiFeature', component: UIFeatureComponent,
     children: [

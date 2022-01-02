@@ -30,6 +30,7 @@ import { ComboComponent } from './combo/combo.component';
 import { ModalWindowComponent } from './modal-window/modal-window.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { IcsTreeComponent } from './ics-tree/ics-tree.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { EmployeeComponent } from './employee/employee.component';
     ComboComponent,
     ModalWindowComponent,
     EmployeesComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    IcsTreeComponent
   ],
   imports: [
     BrowserModule,

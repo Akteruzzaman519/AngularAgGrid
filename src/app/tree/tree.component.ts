@@ -44,26 +44,29 @@ export class TreeComponent implements OnInit {
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    debugger
     // this.routes = JSON.parse(this.cs.ssGet('ROUTES', SessionTag.ROUTES));
   }
 
   ngAfterViewInit(): void {
-    if (this.TreeOptions.extendedProperty !== null && this.TreeOptions.extendedProperty !== undefined) {
-      const hr = this.renderer.createElement('hr');
-      this.renderer.addClass(hr, 'hrLine');
-      this.renderer.setProperty(hr, 'id', 'firstDragger');
-      this.renderer.setProperty(hr, 'draggable', true);
-      const hr2 = this.renderer.createElement('hr');
-      this.renderer.addClass(hr2, 'hrLine');
-      this.renderer.setProperty(hr2, 'id', 'secondDragger');
-      this.renderer.setProperty(hr2, 'draggable', true);
-      this.renderer.setStyle(hr2, 'left', '80%');
+    debugger
+    // if (this.TreeOptions.extendedProperty !== null && this.TreeOptions.extendedProperty !== undefined) {
+    const hr = this.renderer.createElement('hr');
+    this.renderer.addClass(hr, 'hrLine');
+    this.renderer.setProperty(hr, 'id', 'firstDragger');
+    this.renderer.setProperty(hr, 'draggable', true);
+    const hr2 = this.renderer.createElement('hr');
+    this.renderer.addClass(hr2, 'hrLine');
+    this.renderer.setProperty(hr2, 'id', 'secondDragger');
+    this.renderer.setProperty(hr2, 'draggable', true);
+    this.renderer.setStyle(hr2, 'left', '80%');
 
-      this.renderer.appendChild(this.eContainer.element.nativeElement, hr);
-      this.renderer.appendChild(this.eContainer.element.nativeElement, hr2);
-    }
+    this.renderer.appendChild(this.eContainer.element.nativeElement, hr);
+    this.renderer.appendChild(this.eContainer.element.nativeElement, hr2);
+    // }
   }
   ngOnChanges(): void {
+    debugger
     if (this.TreeOptions === undefined || this.TreeOptions === null) { return; }
     if (this.refreshDB === ETreeOperation.PROPAGATE_NODE) {
       this.hookTree();
@@ -80,10 +83,11 @@ export class TreeComponent implements OnInit {
       this.newNode = this.TreeOptions.addedItem;
       this.addNodeToTree();
     }
+    this.hookTree();
   }
 
   private hookTree(): void {
-
+    debugger
     this.root = this.TreeOptions.TreeData.getRoot();
     this.maxID = this.TreeOptions.TreeData.getMaxNodeID();
     if (!(this.refreshDB == ETreeOperation.PROPAGATE_NODE || this.refreshDB == ETreeOperation.RELOAD_TREE)) {
@@ -100,6 +104,7 @@ export class TreeComponent implements OnInit {
   }
   //  #region New Added..................(25/06/2020).....
   private createEditDIV(parentElem, refChild): void {
+    debugger
     this.editDIV = this.renderer.createElement('div');
     this.renderer.insertBefore(parentElem, this.editDIV, refChild);
     this.renderer.addClass(this.editDIV, 'card');
@@ -312,6 +317,7 @@ export class TreeComponent implements OnInit {
   }
 
   private renderEditPanel(event): void {
+    debugger
     if (this.editActive === true) { return; }
     const imgIcon = event.target;
     const nLi = imgIcon.parentNode;
