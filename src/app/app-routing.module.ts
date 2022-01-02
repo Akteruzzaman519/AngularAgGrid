@@ -10,6 +10,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { FromCommonComponent } from './from-common/from-common.component';
 import { HomeComponent } from './home/home.component';
+import { IcsMenuComponent } from './ics-menu/ics-menu.component';
+import { IcsTreeComponent } from './ics-tree/ics-tree.component';
 import { LoginComponent } from './login/login.component';
 import { MenuTreeComponent } from './menu-tree/menu-tree.component';
 import { ModalWindowComponent } from './modal-window/modal-window.component';
@@ -32,6 +34,9 @@ const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
   { path: 'employee', component: EmployeeComponent },
   { path: 'menu', component: MenuTreeComponent },
+  { path: 'menuTree', component: IcsMenuComponent },
+  { path: 'icsTree', component: IcsTreeComponent },
+
   {
     path: 'uiFeature', component: UIFeatureComponent,
     children: [

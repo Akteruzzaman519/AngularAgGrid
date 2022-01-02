@@ -83,7 +83,6 @@ export class TreeComponent implements OnInit {
       this.newNode = this.TreeOptions.addedItem;
       this.addNodeToTree();
     }
-    this.hookTree();
   }
 
   private hookTree(): void {

@@ -1,1 +1,13 @@
-<p>combo works!</p>
+<div #container id="container" class="autocomplete">
+    <div class="input-group input-group-sm mb-2">
+        <div class="input-group-prepend p-0">
+            <label #caption id="caption" class="input-group-text p-0 px-2">{{this.Caption}}</label>
+        </div>
+        <input #inputBox id="{{this.myCompId+'inputBox'}}" class="ics-form-control form-control" (select)="this.SelectedText($event)" placeholder="" autocomplete="off" aria-labelledby="caption" type="text" name="lname">
+        <span *ngIf="this.selectedItems.length>2" class="valueCout"> (+{{this.countSelectedItems}})</span>
+        <button #textClosebtn id="{{this.myCompId+'textClosebtn'}}" for="{{this.myCompId+'inputBox'}}" *ngIf='this.selectedItem.objID>0 && this.disableCombo!==true' class="ics-btn ics-btn-secondary ml-0 ics-btn-backspace" aria-label="Right Align"></button>
+        <label *ngIf='this.dropdownToggler===false' #dropDownshow for="{{this.myCompId+'inputBox'}}" id="dropDownshow" class="dropDownBtn mb-0 ics-btn ics-btn-secondary ics-btn-dropdown ics-bg-silver"></label>
+        <label *ngIf='this.dropdownToggler===true' #dropDownhide id="dropDownhide" class="dropDownBtn ics-btn ics-btn-secondary mb-0 ics-btn-dropdown ics-bg-silver"></label>
+        <label #lblcount *ngIf="this.showCount===true" id="lblcount" for="{{this.myCompId+'inputBox'}}" class="count position-absolute right-0 mb-0">{{count}}</label>
+    </div>
+</div>
